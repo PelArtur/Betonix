@@ -2,6 +2,7 @@ import Header from './Header.jsx'
 import Company from './Company.jsx'
 import CallMeForm from './CallMeForm.jsx';
 import PriceTable from './PriceTable.jsx';
+import Footer from './Footer.jsx';
 
 function App()
 {
@@ -11,6 +12,7 @@ function App()
             <Company/>
             <CallMeForm/>
             <PriceTable/>
+            <Footer/>
         </>
     );
 }

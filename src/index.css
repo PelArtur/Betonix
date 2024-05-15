@@ -390,3 +390,50 @@ button:focus-visible {
   align-items: center;
   justify-content: center;
 }
+
+
+
+footer {
+  position: relative;
+  top: 800px;
+  background-color: #31363F;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-content{
+  margin-left: calc((100% - 1200px)/2);
+  margin-right: calc((100% - 1200px)/2);
+  width: min(1200px, 100%);
+  display: flex;
+  justify-content: center;
+  gap: 20%;
+}
+
+#footer-image {
+  width: 200px;
+  height: auto;
+}
+
+.footer-right-text{
+  position: relative;
+}
+
+.footer-details-text {
+  color: white;
+}
+
+
+
+@media screen and (max-width: 760px) {
+  .footer-content {
+      margin-left: 20px;
+      margin-right: 20px;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+  }
+}
