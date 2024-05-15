@@ -1,5 +1,10 @@
-function Price()
+function PriceCalculator(props)
 {
+
+
+
+
+
     return(
         <div className="calculate-price">
             <div className="calculate-price-content">
@@ -62,9 +67,9 @@ function Price()
 
                             <div className="calculate-price-content-box-right-element-input">
                                 <p className="calculate-price-content-box-element-text">Об'єм</p>
-                                {/* <div className="calculate-price-input">
-                                    <input className="text" placeholder="Напр. 100" style="width: 280px;"></input>
-                                </div> */}
+                                <div className="calculate-price-input">
+                                    <input className="text" placeholder="Напр. 100" ></input>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -77,4 +82,4 @@ function Price()
     );
 }
 
-export default Price
+export default PriceCalculator
