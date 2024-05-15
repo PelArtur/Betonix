@@ -3,6 +3,7 @@ import Company from './Company.jsx'
 import CallMeForm from './CallMeForm.jsx';
 import PriceTable from './PriceTable.jsx';
 import Footer from './Footer.jsx';
+import BetonixMap from './BetonixMap.jsx';
 
 function App()
 {
@@ -12,6 +13,7 @@ function App()
             <Company/>
             <CallMeForm/>
             <PriceTable/>
+            <BetonixMap/>
             <Footer/>
         </>
     );

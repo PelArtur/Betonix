@@ -391,6 +391,11 @@ button:focus-visible {
   justify-content: center;
 }
 
+.mapContainer{
+  position: relative;
+  top: 550px;
+  margin-left: calc((100% - 1200px)/2);
+}
 
 
 footer {
