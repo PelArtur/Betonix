@@ -319,3 +319,74 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 } */
+
+
+.table-container{
+  position: relative;
+  top: 400px;
+}
+
+.concrete-price-table {
+  position: relative;
+  top: 100px;
+  width: 1200px;
+  margin-left: calc((100% - 1200px)/2);
+  margin-right: calc((100% - 1200px)/2);
+  border-collapse: collapse;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.concrete-price-table thead tr {
+  background-color: #31363F;
+  color: white;
+  text-align: left;
+  font-weight: bold;
+  font-size: 17px;
+}
+
+.table-text-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  width: 60px;
+  border-radius: 100px;
+  background-color: #EAECF4;
+  margin: auto;
+}
+
+.concrete-price-table th,
+.concrete-price-table td {
+  padding: 20px 15px;
+  width: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.concrete-price-table tbody tr {
+  font-size: 17px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.concrete-price-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.concrete-price-table tbody tr:last-of-type {
+  border-bottom: 2px solid #31363F;
+}
+
+.concrete-price-table .compressive-strength{
+  width: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.concrete-price-table .tensile-strength{
+  width: auto;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,6 +1,7 @@
 import Header from './Header.jsx'
 import Company from './Company.jsx'
 import CallMeForm from './CallMeForm.jsx';
+import PriceTable from './PriceTable.jsx';
 
 function App()
 {
@@ -9,6 +10,7 @@ function App()
             <Header/>
             <Company/>
             <CallMeForm/>
+            <PriceTable/>
         </>
     );
 }
