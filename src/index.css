@@ -109,6 +109,53 @@ header
     line-height: 20px;
 }
 
+.company
+{
+    position: relative;                     /* David added this to custom position */
+    top: 120px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.company-content
+{
+    width: min(1200px, 100%);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
+.company-content-img
+{
+    height: 700px;
+    width: auto;
+}
+
+.company-content-right
+{
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    margin-top: 200px;
+    justify-content: left;
+}
+
+.company-content-right-name
+{
+    font-weight: bold;
+    font-size: 90px;
+    line-height: 20px;
+}
+
+.company-content-right-info
+{
+    margin-left: 10px;
+    margin-top: -20px;
+    font-size: 20px;
+}
+
 
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

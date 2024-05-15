@@ -1,7 +1,6 @@
 import betonixLogo from './assets/logo-betonix-notxt.png'
 import phoneIcon from './assets/phone_call.svg'
 
-
 function Header()
 {
     return(

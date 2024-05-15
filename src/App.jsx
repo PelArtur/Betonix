@@ -1,9 +1,13 @@
 import Header from './Header.jsx'
+import Company from './Company.jsx'
 
 function App() 
 {
     return(
-        <Header></Header>
+        <>
+            <Header/>
+            <Company/>
+        </>    
     );
 }
 
