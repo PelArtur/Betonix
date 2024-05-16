@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 
 app.post('/submit-form', (req, res) => {
     const formData = req.body;
-    const filePath = path.join(__dirname, 'CallRequests.json');
+    const filePath = "../data/CallRequests.json";
 
     fs.readFile(filePath, (err, data) => {
         let jsonData = [];
