@@ -321,14 +321,77 @@ button:focus-visible {
 } */
 
 
+.swiper {
+  position: relative;
+  top: 600px;
+  width: 1400px;
+  height: 730px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.mySwiper .swiper-button-prev,
+.mySwiper .swiper-button-next {
+  color: white;
+  background-color: #32363F;
+  padding: 10px;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+}
+.mySwiper .swiper-button-prev{
+  position: absolute;
+  left: 30px;
+  top: 453px;
+}
+.mySwiper .swiper-button-next{
+  position: absolute;
+  right: 30px;
+  top: 453px;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 10px;
+}
+
+
+.mySwiper .swiper-button-prev:hover,
+.mySwiper .swiper-button-next:hover {
+    background-color: #8395a8;
+}
+
+
+.mySwiper .swiper-pagination-bullet {
+  background-color: #0c141d;
+}
+
 .table-container{
   position: relative;
-  top: 400px;
+}
+
+.TableDescription{
+  position: relative;
+  font-size: 30px;
+  bottom: 10px;
+}
+
+.mySwiper .swiper-pagination {
+  position: absolute;
+  bottom: 0px;
 }
 
 .concrete-price-table {
   position: relative;
-  top: 100px;
   width: 1200px;
   margin-left: calc((100% - 1200px)/2);
   margin-right: calc((100% - 1200px)/2);
@@ -393,7 +456,7 @@ button:focus-visible {
 
 .mapContainer{
   position: relative;
-  top: 550px;
+  top: 750px;
   margin-left: calc((100% - 1200px)/2);
 }
 
