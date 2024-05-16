@@ -323,6 +323,8 @@ button:focus-visible {
 
 .swiper {
   position: relative;
+  margin-left: calc((100% - 1400px)/2);
+  margin-right: calc((100% - 1400px)/2);
   top: 600px;
   width: 1400px;
   height: 730px;
