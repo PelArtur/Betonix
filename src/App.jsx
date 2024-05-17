@@ -33,9 +33,11 @@ function App()
             <CallMeForm/>
             <PriceTable/>
             {pricesSelect && <PriceCalculator data = {pricesSelect}/>}
-            <BetonixMap/>
+            <section className='map-section'>
+                <BetonixMap/>
+                <MapForm/>
+            </section>
             <Footer/>
-            <MapForm/>
         </>
     );
 }

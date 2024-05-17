@@ -457,17 +457,17 @@ button:focus-visible {
 }
 
 .mapContainer{
-  position: relative;
-  top: 750px;
+  margin-top: 200px;;
   margin-left: calc((100% - 1200px)/2);
 }
 
 
 .calculate-price
 {
-    margin-top: 600px;
+    margin-top: 800px;
     margin-left: calc((100% - 1200px)/2);
     margin-right: calc((100% - 1200px)/2);
+    margin-bottom: 0px;
 }
 
 .calculate-price-content
@@ -597,7 +597,7 @@ button:focus-visible {
 
 footer {
   position: relative;
-  top: 800px;
+  top: 0px;
   background-color: #31363F;
   padding: 20px;
   display: flex;
@@ -629,8 +629,8 @@ footer {
 
 .map-form {
   position: relative;
-  bottom: 55px;
-  margin-left: calc(((100% - 1200px)/2) + 700px);
+  top: 200px;
+  left: 80px;
   margin-right: calc((100% - 1200px)/2);
   text-align: center;
   width: 400px;
@@ -704,4 +704,11 @@ footer {
       justify-content: center;
       text-align: center;
   }
+}
+
+.map-section{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 150px;
 }
