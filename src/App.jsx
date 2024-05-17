@@ -11,8 +11,11 @@ import MapForm from './mainPage/MapForm.jsx';
 import ExtraFooter from './ExtraPagesFooter.jsx';
 import ConcreteTopic from './concretePage/ConcreteTopic.jsx';
 
+import SandTopic from './sandPage/sandTopic.jsx';
+import CrushedStoneTopic from './crushedStone/CrushedStoneTopic.jsx';
+
 import React, {useEffect, useState} from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 function App()
 {
@@ -49,6 +52,14 @@ function App()
                         </Route>
                         <Route path='/concrete'>
                             <ConcreteTopic/>
+                            <ExtraFooter/>
+                        </Route>
+                        <Route path='/sand'>
+                            <SandTopic/>
+                            <ExtraFooter/>
+                        </Route>
+                        <Route path='/crushedstone'>
+                            <CrushedStoneTopic/>
                             <ExtraFooter/>
                         </Route>
                     </Switch>

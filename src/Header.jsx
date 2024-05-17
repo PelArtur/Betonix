@@ -14,8 +14,8 @@ function Header()
                     <div className="header-mid-links">
                         <a className="header-mid-link" href="/">Головна сторінка</a>
                         <a className="header-mid-link" href="/concrete/#concrete">Бетон</a>
-                        <a className="header-mid-link" href="#">Пісок</a>
-                        <a className="header-mid-link" href="#">Щебінь</a>
+                        <a className="header-mid-link" href="/sand/#sandPage">Пісок</a>
+                        <a className="header-mid-link" href="/crushedstone/#crushedStonePage">Щебінь</a>
                     </div>
                 </div>
                 <div className="header-right">
