@@ -42,7 +42,8 @@ function App()
                     <Switch>
                         <Route exact path='/'>
                             <CallMeForm/>
-                            <PriceTable/>
+                            {/* <PriceTable/> */}
+                            {prices && <PriceTable data = {prices}/>}
                             {pricesSelect && <PriceCalculator data = {pricesSelect}/>}
                             <section className='map-section'>
                                 <BetonixMap/>

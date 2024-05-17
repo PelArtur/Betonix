@@ -8,19 +8,19 @@ import 'swiper/css/pagination';
 
 import "swiper/css";
 
-export default function PriceTable() {
-    const [data, setData] = useState(null);
+export default function PriceTable(props) {
+    // const [data, setData] = useState(null);
 
-    useEffect(() => {
-        fetch('/data/prices.json')
-            .then(response => response.json())
-            .then(data => setData(data.merchandise))
-            .catch(error => console.error('Error fetching data:', error));
-    }, []);
+    // useEffect(() => {
+    //     fetch('/data/prices.json')
+    //         .then(response => response.json())
+    //         .then(data => setData(data.merchandise))
+    //         .catch(error => console.error('Error fetching data:', error));
+    // }, []);
 
-    if (!data) {
-        return <div>Loading...</div>;
-    }
+    // if (!data) {
+    //     return <div>Loading...</div>;
+    // }
 
     const renderConcreteRow = (strength, tensile, prices) => (
         <tr key={strength}>
@@ -72,13 +72,13 @@ export default function PriceTable() {
                         </tr>
                     </thead>
                     <tbody>
-                        {renderConcreteRow('M100', 'B7.5', data.Бетон.M100)}
-                        {renderConcreteRow('M150', 'B10', data.Бетон.M150)}
-                        {renderConcreteRow('M200', 'B15', data.Бетон.M200)}
-                        {renderConcreteRow('M250', 'B20', data.Бетон.M250)}
-                        {renderConcreteRow('M300', 'B25', data.Бетон.M300)}
-                        {renderConcreteRow('M350', 'B25', data.Бетон.M350)}
-                        {renderConcreteRow('M400', 'B30', data.Бетон.M400)}
+                        {renderConcreteRow('M100', 'B7.5', props.data.Бетон.M100)}
+                        {renderConcreteRow('M150', 'B10', props.data.Бетон.M150)}
+                        {renderConcreteRow('M200', 'B15', props.data.Бетон.M200)}
+                        {renderConcreteRow('M250', 'B20', props.data.Бетон.M250)}
+                        {renderConcreteRow('M300', 'B25', props.data.Бетон.M300)}
+                        {renderConcreteRow('M350', 'B25', props.data.Бетон.M350)}
+                        {renderConcreteRow('M400', 'B30', props.data.Бетон.M400)}
                     </tbody>
                 </table>
           </section>
@@ -95,11 +95,11 @@ export default function PriceTable() {
                         </tr>
                     </thead>
                     <tbody>
-                        {renderMortarConcreteRow('M50', data['Розчин цементно-піщаний'].M50)}
-                        {renderMortarConcreteRow('M75', data['Розчин цементно-піщаний'].M75)}
-                        {renderMortarConcreteRow('M100', data['Розчин цементно-піщаний'].M100)}
-                        {renderMortarConcreteRow('M150', data['Розчин цементно-піщаний'].M150)}
-                        {renderMortarConcreteRow('M200', data['Розчин цементно-піщаний'].M200)}
+                        {renderMortarConcreteRow('M50', props.data['Розчин цементно-піщаний'].M50)}
+                        {renderMortarConcreteRow('M75', props.data['Розчин цементно-піщаний'].M75)}
+                        {renderMortarConcreteRow('M100', props.data['Розчин цементно-піщаний'].M100)}
+                        {renderMortarConcreteRow('M150', props.data['Розчин цементно-піщаний'].M150)}
+                        {renderMortarConcreteRow('M200', props.data['Розчин цементно-піщаний'].M200)}
                     </tbody>
                 </table>
         </section>
@@ -115,9 +115,9 @@ export default function PriceTable() {
                         </tr>
                     </thead>
                     <tbody>
-                        {renderSandRow('щебінь гранітний', '5-20', data['Щебінь та пісок']['щебінь гранітний фракція 5-20'])}
-                        {renderSandRow('щебінь гранітний', '20-40', data['Щебінь та пісок']['щебінь гранітний фракція 20-40'])}
-                        {renderSandRow('пісок будівельний', '', data['Щебінь та пісок']['пісок будівельний'])}
+                        {renderSandRow('щебінь гранітний', '5-20', props.data['Щебінь та пісок']['щебінь гранітний фракція 5-20'])}
+                        {renderSandRow('щебінь гранітний', '20-40', props.data['Щебінь та пісок']['щебінь гранітний фракція 20-40'])}
+                        {renderSandRow('пісок будівельний', '', props.data['Щебінь та пісок']['пісок будівельний'])}
                     </tbody>
                 </table>
              </section></SwiperSlide>
