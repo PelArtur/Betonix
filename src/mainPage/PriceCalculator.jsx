@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
-import mashinka from './assets/CalculatePriceMashinka.jpg';
+import mashinka from '../assets/CalculatePriceMashinka.jpg';
 
 function PriceCalculator(props)
 {
@@ -77,7 +77,7 @@ function PriceCalculator(props)
 
 
     return(
-        <div className="calculate-price">
+        <div className="calculate-price" id='priceCalculator'>
             <div className="calculate-price-content">
                 <p className="calculate-price-content-title">Розрахувати приблизну вартість</p>
                 <div className="calculate-price-content-box">

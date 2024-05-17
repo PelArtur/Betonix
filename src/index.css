@@ -618,13 +618,29 @@ footer {
   height: auto;
 }
 
-.footer-right-text{
+.footer-right-text {
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
-.footer-details-text {
+.footer-mid-text {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.footer-mid-details-text {
+  text-decoration: none;
   color: white;
 }
+
+.footer-right-details-text {
+    color: white;
+    margin-bottom: 0px;
+}
+
 
 
 .map-form {
@@ -711,4 +727,71 @@ footer {
   display: flex;
   flex-direction: row;
   margin-bottom: 150px;
+}
+
+
+
+
+
+/*------------------------------------
+Concrete page
+------------------------------------*/
+
+.concrete-info
+{
+    width: 1200px;
+    margin-left: calc((100% - 1200px)/2);
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+
+.concrete-info-header
+{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+.concrete-info-section-header
+{
+  font-size: 30px;
+}
+
+.concrete-info-section-text
+{
+  margin-top: -15px;
+  font-size: 18px;
+}
+
+.concrete-marks
+{
+    margin-top: -20px;
+    display: flex;
+    gap: 5%;
+}
+
+.concrete-marks-header
+{
+  font-size: 23px;
+}
+
+.concrete-marks-description
+{
+  margin-top: -15px;
+  font-size: 15px;
+}
+
+.extraFooter-content
+{
+    justify-content: left;
+    background-color: #31363F;
+    color: white;
+    height: 50px;
+}
+
+.extraFooter-content-name
+{
+    position: absolute;
+    right: 10%;
 }

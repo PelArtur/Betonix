@@ -8,12 +8,12 @@ function Header()
             <div className="header-content">
                 <div className="header-left">
                     <img id="header-image" src={betonixLogo} alt="Betonix"></img>
-                    <a className="header-left-link" href="#">Бетонікс</a>
+                    <a className="header-left-link" href="/">Бетонікс</a>
                 </div>
                 <div className="header-mid">
                     <div className="header-mid-links">
-                        <a className="header-mid-link" href="#">Головна сторінка</a>
-                        <a className="header-mid-link" href="#">Бетон</a>
+                        <a className="header-mid-link" href="/">Головна сторінка</a>
+                        <a className="header-mid-link" href="/concrete/#concrete">Бетон</a>
                         <a className="header-mid-link" href="#">Пісок</a>
                         <a className="header-mid-link" href="#">Щебінь</a>
                     </div>
