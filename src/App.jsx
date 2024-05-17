@@ -22,7 +22,7 @@ function App()
             setPrices(data);
             setPricesSelect(fetchPricesSelect(data))
         })
-    }), [];
+    }, []);
 
     function fetchPricesSelect(obj) 
     {
