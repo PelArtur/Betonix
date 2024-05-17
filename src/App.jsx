@@ -6,6 +6,7 @@ import PriceCalculator from './PriceCalculator.jsx';
 import Footer from './Footer.jsx';
 import BetonixMap from './BetonixMap.jsx';
 import fetchPricesSelect from './FilesFetching.js'
+import MapForm from './MapForm.jsx';
 
 import React, {useEffect, useState} from 'react';
 
@@ -34,6 +35,7 @@ function App()
             {pricesSelect && <PriceCalculator data = {pricesSelect}/>}
             <BetonixMap/>
             <Footer/>
+            <MapForm/>
         </>
     );
 }

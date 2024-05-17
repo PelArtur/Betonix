@@ -627,6 +627,72 @@ footer {
 }
 
 
+.map-form {
+  position: relative;
+  bottom: 55px;
+  margin-left: calc(((100% - 1200px)/2) + 700px);
+  margin-right: calc((100% - 1200px)/2);
+  text-align: center;
+  width: 400px;
+}
+
+.map-form-front-text {
+  text-align: center;
+  font-size: 25px;
+  margin-left: 45px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.map-form-input-box {
+  width: 400px;
+  height: 400px ;
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.city-text-map-form {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.map-form-box {
+  margin-top: 20px;
+}
+
+.map-form-box input {
+  margin-top: 20px;
+  width: calc(100% - 100px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.map-form-button {
+  margin-top: 40px;
+  background-color: #061831;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 18px;
+}
+
+.map-form-price-text{
+  margin-top: 40px;
+  font-size: 30px;
+}
+
+.map-form-button:hover {
+  background-color: #999;
+}
+
+
 
 @media screen and (max-width: 760px) {
   .footer-content {

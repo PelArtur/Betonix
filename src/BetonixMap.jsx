@@ -1,19 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { GoogleMap, useJsApiLoader, Polygon } from '@react-google-maps/api';
+import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 import mapStyles from '../mapStyles.json';
-// import regionData from '../lvivArea.geojson';
 
 const mapSize = {
-  width: '500px',
-  height: '500px'
+  width: '600px',
+  height: '600px'
+};
+
+const betonixPosition = {
+  lat: 49.819035,
+  lng: 24.061590
 };
 
 const center = {
-  lat: 49.839680,
-  lng: 24.029720
+  lat: 49.755105,
+  lng: 23.958092
 };
 
 function BetonixMap() {
+
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyDwNxzDD8oPOqotA3jBOjHQk_3lwUxHpZI"
@@ -23,11 +28,21 @@ function BetonixMap() {
   const [zoomLevel, setZoomLevel] = useState(8);
 
   useEffect(() => {
-    const storedZoom = localStorage.getItem('mapZoomLevel');
-    if (storedZoom) {
-      setZoomLevel(parseFloat(storedZoom));
-    }
-  }, []);
+  if (map) {
+    map.data.loadGeoJson("../lvivAreaSimpl.json", null, (features) => {
+      map.data.setStyle({
+        fillOpacity: 0.1,
+        strokeWeight: 2
+      });
+    });
+
+    const marker = new window.google.maps.Marker({
+      position: betonixPosition,
+      map: map,
+      title: "Betonix Position"
+    });
+  }
+}, [map]);
 
   const handleZoomChange = (newZoom) => {
     setZoomLevel(newZoom);
@@ -62,22 +77,9 @@ function BetonixMap() {
             styles: mapStyles
           }}
         >
-          {/* {regionData.features && regionData.features.map((feature, index) => ( // Select Lviv area
-            <Polygon
-              key={index}
-              paths={feature.geometry.coordinates}
-              options={{
-                strokeColor: "#FF0000",
-                strokeOpacity: 0.8,
-                strokeWeight: 2,
-                fillColor: "#FF0000",
-                fillOpacity: 0.35
-              }}
-            />
-          ))} */}
         </GoogleMap>
       ) : (
-        <></>
+        <div>Loading...</div>
       )}
     </section>
   );

@@ -3,13 +3,14 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const axios = require('axios');
 
 const app = express();
 const PORT = 5000;
 
 app.use(cors());
-
 app.use(bodyParser.json());
+
 
 app.post('/submit-form', (req, res) => {
     const formData = req.body;
@@ -29,6 +30,22 @@ app.post('/submit-form', (req, res) => {
             res.status(200).json({ message: 'Data saved successfully' });
         });
     });
+});
+
+app.get('/distance', async (req, res) => {
+    const { destination } = req.query;
+    const origin = 'Ukraine, Lviv';
+    const apiKey = 'AIzaSyDwNxzDD8oPOqotA3jBOjHQk_3lwUxHpZI';
+  
+    try {
+      const response = await axios.get(
+        `https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=${origin}&destinations=${destination}&key=${apiKey}`
+      );
+  
+      res.json(response.data);
+    } catch (error) {
+      res.status(500).json({ error: 'Error fetching distance.' });
+    }
 });
 
 app.listen(PORT, () => {

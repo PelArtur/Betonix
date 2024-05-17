@@ -73,8 +73,6 @@ function PriceCalculator(props)
                 background: "#EBEBEB"
             }
         }),
-        
-            
     };
 
 
