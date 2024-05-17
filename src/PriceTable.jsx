@@ -1,8 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from 'swiper/modules';
-import { Pagination } from 'swiper/modules';
+import { Navigation, Pagination } from 'swiper/modules';
 
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -10,6 +9,45 @@ import 'swiper/css/pagination';
 import "swiper/css";
 
 export default function PriceTable() {
+    const [data, setData] = useState(null);
+
+    useEffect(() => {
+        fetch('/data/prices.json')
+            .then(response => response.json())
+            .then(data => setData(data.merchandise))
+            .catch(error => console.error('Error fetching data:', error));
+    }, []);
+
+    if (!data) {
+        return <div>Loading...</div>;
+    }
+
+    const renderConcreteRow = (strength, tensile, prices) => (
+        <tr key={strength}>
+            <td className="compressive-strength"><div className="table-text-box">{strength}</div></td>
+            <td className="tensile-strength"><div className="table-text-box">{tensile}</div></td>
+            <td className="concrete-price-column">{prices.P1} ₴</td>
+            <td className="concrete-price-column">{prices.P2} ₴</td>
+            <td className="concrete-price-column">{prices.P3} ₴</td>
+            <td className="concrete-price-column">{prices.P4} ₴</td>
+        </tr>
+    );
+
+    const renderMortarConcreteRow = (strength, prices) => (
+        <tr key={strength}>
+            <td className="compressive-strength"><div className="table-text-box">{strength}</div></td>
+            <td className="concrete-price-column">{prices['Осадка конуса 1-4']} ₴</td>
+            <td className="concrete-price-column">{prices['Осадка конуса 8-10']} ₴</td>
+        </tr>
+    );
+
+    const renderSandRow = (name, fraction, price) => (
+        <tr key={fraction}>
+            <td className="compressive-strength">{name}</td>
+            <td className="concrete-price-column">{fraction}</td>
+            <td className="concrete-price-column">{price} ₴</td>
+        </tr>
+    );
   return (
     <>
         <Swiper
@@ -34,62 +72,13 @@ export default function PriceTable() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td className="compressive-strength"><div className="table-text-box">М100</div></td>
-                            <td className="tensile-strength"><div className="table-text-box">В7,5</div></td>
-                            <td className="concrete-price-column">1410 ₴</td>
-                            <td className="concrete-price-column">1450 ₴</td>
-                            <td className="concrete-price-column">1470 ₴</td>
-                            <td className="concrete-price-column">1490 ₴</td>
-                        </tr>
-                        <tr>
-                            <td className="compressive-strength"><div className="table-text-box">М150</div></td>
-                            <td className="tensile-strength"><div className="table-text-box">В10</div></td>
-                            <td className="concrete-price-column">1480 ₴</td>
-                            <td className="concrete-price-column">1500 ₴</td>
-                            <td className="concrete-price-column">1520 ₴</td>
-                            <td className="concrete-price-column">1540 ₴</td>
-                        </tr>
-                        <tr>
-                            <td className="compressive-strength"><div className="table-text-box">M200</div></td>
-                            <td className="tensile-strength"><div className="table-text-box">B15</div></td>
-                            <td className="concrete-price-column">1550 ₴</td>
-                            <td className="concrete-price-column">1590 ₴</td>
-                            <td className="concrete-price-column">1620 ₴</td>
-                            <td className="concrete-price-column">1640 ₴</td>
-                        </tr>
-                        <tr>
-                            <td className="compressive-strength"><div className="table-text-box">M250</div></td>
-                            <td className="tensile-strength"><div className="table-text-box">B20</div></td>
-                            <td className="concrete-price-column">1660 ₴</td>
-                            <td className="concrete-price-column">1680 ₴</td>
-                            <td className="concrete-price-column">1700 ₴</td>
-                            <td className="concrete-price-column">1720 ₴</td>
-                        </tr>
-                        <tr>
-                            <td className="compressive-strength"><div className="table-text-box">M300</div></td>
-                            <td className="tensile-strength"><div className="table-text-box">B25</div></td>
-                            <td className="concrete-price-column">1720 ₴</td>
-                            <td className="concrete-price-column">1740 ₴</td>
-                            <td className="concrete-price-column">1760 ₴</td>
-                            <td className="concrete-price-column">1780 ₴</td>
-                        </tr>
-                        <tr>
-                            <td className="compressive-strength"><div className="table-text-box">M350</div></td>
-                            <td className="tensile-strength"><div className="table-text-box">B25</div></td>
-                            <td className="concrete-price-column">1780 ₴</td>
-                            <td className="concrete-price-column">1800 ₴</td>
-                            <td className="concrete-price-column">1820 ₴</td>
-                            <td className="concrete-price-column">1840 ₴</td>
-                        </tr>
-                        <tr>
-                            <td className="compressive-strength"><div className="table-text-box">M400</div></td>
-                            <td className="tensile-strength"><div className="table-text-box">B30</div></td>
-                            <td className="concrete-price-column">1850 ₴</td>
-                            <td className="concrete-price-column">1890 ₴</td>
-                            <td className="concrete-price-column">1910 ₴</td>
-                            <td className="concrete-price-column">1930 ₴</td>
-                        </tr>
+                        {renderConcreteRow('M100', 'B7.5', data.Бетон.M100)}
+                        {renderConcreteRow('M150', 'B10', data.Бетон.M150)}
+                        {renderConcreteRow('M200', 'B15', data.Бетон.M200)}
+                        {renderConcreteRow('M250', 'B20', data.Бетон.M250)}
+                        {renderConcreteRow('M300', 'B25', data.Бетон.M300)}
+                        {renderConcreteRow('M350', 'B25', data.Бетон.M350)}
+                        {renderConcreteRow('M400', 'B30', data.Бетон.M400)}
                     </tbody>
                 </table>
           </section>
@@ -106,31 +95,11 @@ export default function PriceTable() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td className="compressive-strength"><div className="table-text-box">М50</div></td>
-                            <td className="concrete-price-column">1160 ₴</td>
-                            <td className="concrete-price-column">1260 ₴</td>
-                        </tr>
-                        <tr>
-                            <td className="compressive-strength"><div className="table-text-box">М75</div></td>
-                            <td className="concrete-price-column">1220 ₴</td>
-                            <td className="concrete-price-column">1330 ₴</td>
-                        </tr>
-                        <tr>
-                            <td className="compressive-strength"><div className="table-text-box">М100</div></td>
-                            <td className="concrete-price-column">1290 ₴</td>
-                            <td className="concrete-price-column">1390 ₴</td>
-                        </tr>
-                        <tr>
-                            <td className="compressive-strength"><div className="table-text-box">М150</div></td>
-                            <td className="concrete-price-column">1360 ₴</td>
-                            <td className="concrete-price-column">1460 ₴</td>
-                        </tr>
-                        <tr>
-                            <td className="compressive-strength"><div className="table-text-box">М200</div></td>
-                            <td className="concrete-price-column">1460 ₴</td>
-                            <td className="concrete-price-column">1530 ₴</td>
-                        </tr>
+                        {renderMortarConcreteRow('M50', data['Розчин цементно-піщаний'].M50)}
+                        {renderMortarConcreteRow('M75', data['Розчин цементно-піщаний'].M75)}
+                        {renderMortarConcreteRow('M100', data['Розчин цементно-піщаний'].M100)}
+                        {renderMortarConcreteRow('M150', data['Розчин цементно-піщаний'].M150)}
+                        {renderMortarConcreteRow('M200', data['Розчин цементно-піщаний'].M200)}
                     </tbody>
                 </table>
         </section>
@@ -146,21 +115,9 @@ export default function PriceTable() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td className="sandText">щебінь гранітний</td>
-                            <td>5-20</td>
-                            <td className="concrete-price-column">770 ₴</td>
-                        </tr>
-                        <tr>
-                            <td className="sandText">щебінь гранітний</td>
-                            <td>20-40</td>
-                            <td className="concrete-price-column">750 ₴</td>
-                        </tr>
-                        <tr>
-                            <td className="sandText">пісок будівельний</td>
-                            <td></td>
-                            <td className="concrete-price-column">300 ₴</td>
-                        </tr>
+                        {renderSandRow('щебінь гранітний', '5-20', data['Щебінь та пісок']['щебінь гранітний фракція 5-20'])}
+                        {renderSandRow('щебінь гранітний', '20-40', data['Щебінь та пісок']['щебінь гранітний фракція 20-40'])}
+                        {renderSandRow('пісок будівельний', '', data['Щебінь та пісок']['пісок будівельний'])}
                     </tbody>
                 </table>
              </section></SwiperSlide>
