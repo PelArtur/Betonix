@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
-import mashinka from '../assets/CalculatePriceMashinka.jpg';
+import mashinka from './assets/CalculatePriceMashinka.jpg';
 
 function PriceCalculator(props)
 {

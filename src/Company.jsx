@@ -1,4 +1,4 @@
-import mashinka from '../assets/mashinka.png'
+import mashinka from './assets/mashinka.png'
 
 function Company()
 {
