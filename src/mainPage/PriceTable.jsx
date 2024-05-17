@@ -9,19 +9,6 @@ import 'swiper/css/pagination';
 import "swiper/css";
 
 export default function PriceTable(props) {
-    // const [data, setData] = useState(null);
-
-    // useEffect(() => {
-    //     fetch('/data/prices.json')
-    //         .then(response => response.json())
-    //         .then(data => setData(data.merchandise))
-    //         .catch(error => console.error('Error fetching data:', error));
-    // }, []);
-
-    // if (!data) {
-    //     return <div>Loading...</div>;
-    // }
-
     const renderConcreteRow = (strength, tensile, prices) => (
         <tr key={strength}>
             <td className="compressive-strength"><div className="table-text-box">{strength}</div></td>
