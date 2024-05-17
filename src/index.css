@@ -283,12 +283,12 @@ input[type="text"] {
 .mySwiper .swiper-button-prev{
   position: absolute;
   left: 30px;
-  top: 453px;
+  top: 380px;
 }
 .mySwiper .swiper-button-next{
   position: absolute;
   right: 30px;
-  top: 453px;
+  top: 380px;
 }
 
 .swiper-button-next::after,

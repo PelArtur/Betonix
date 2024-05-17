@@ -1,8 +1,42 @@
-# React + Vite
+# Betonix
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+У цьому репозиторії знаходиться проект команди 2 курсу Комп'ютерних наук УКУ, склад команди:
+- Пельчарський Артур
+- Ільницький Давид
+- Булешний Михайло
+- Булешний Максим
 
-Currently, two official plugins are available:
+## Запуск сайту
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Спершу необхідно встановити всі необхідні бібліотеки:
+
+### `npm install`
+
+Після чого запустити всі необхідні сервери та сам сайт
+
+```bash
+npx json-server --watch data/prices.json --port 8000
+```
+
+JSON-server для стягування поточних цін для таблиці цін і калькулятора
+
+```bash
+cd backend
+node server.js
+```
+
+Для отримання інпуту користувача з блоку швидкого замовлення і запису результату в файл `.data/CallRequests.json`. А також пошук відстаней для вартості доставлення.
+
+```bash
+npm run dev
+```
+
+Для запуску сайту. Після чого, щоб його відкрити потрібно перейти за посиланням http://localhost:5173/
+
+## Структура проекту
+
+В директорії src знаходитьс яокд для всіх компонент сайту. Кожна сторінка також розбита на додаткові директорії, а спільні для декількох сторінок компоненти знаходятьс яв src.
+
+В data є два json файли.
+- CallRequests.json — тут зберігаються всі швидкі замовлення користувачів. Наразі це тимчасовий механізм у майбутньому дані надходитимуть в базу даних, де вже будуть використовуватись для контакту менеджерів, наприклад через телеграм бота або аплікації.
+- prices.json — файл зі всіма цінами товарів
